@@ -1,9 +1,8 @@
-//Class component
 import { Component } from "react";
-import styles from "./Date.module.css";
-import moment from "moment"; // moment library
+import styles from "./DateContainer.module.css";
+import moment from "moment"; // moment library for date container
 
-class Date extends Component {
+class DateContainer extends Component {
   date = moment().format("D");
   month = moment().format("MMM");
   year = moment().format("YYYY");
@@ -23,4 +22,4 @@ class Date extends Component {
     );
   }
 }
-export default Date;
+export default DateContainer;
