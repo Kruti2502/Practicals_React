@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import styles from "./AddTodoForm.module.css";
 import { TodoListInterface } from "../App";
 import { v4 as uuidv4 } from "uuid"; //uuid library
+import moment from "moment";
 
 interface AddTodoFormInterface {
   onCancelClicked: (arg: boolean) => void;
@@ -32,20 +33,19 @@ const AddTodoForm = ({
         localStorage.getItem("todo") || "[]"
       );
       if (typeof enteredValue === "string") {
-        const curTime = new Date();
         const todoTask: TodoListInterface = {
           id: uuidv4(),
           title: enteredValue,
-          date: `${curTime.getDate()}/${
-            curTime.getMonth() + 1
-          }/${curTime.getFullYear()}`,
+          date: `${moment().format("D")}/${moment().format(
+            "M"
+          )}/${moment().format("YYYY")}`,
           isCompleted: false,
         };
         todoArray.push(todoTask);
-        todoArray = todoArray.filter((todo: TodoListInterface) => {
-          let curDate = `${curTime.getDate()}/${
-            curTime.getMonth() + 1
-          }/${curTime.getFullYear()}`;
+        todoArray = todoArray.filter((todo) => {
+          const curDate = `${moment().format("D")}/${moment().format(
+            "M"
+          )}/${moment().format("YYYY")}`;
           return curDate === todo.date;
         });
         localStorage.setItem("todo", JSON.stringify(todoArray));
@@ -58,17 +58,19 @@ const AddTodoForm = ({
   //For cancel button
   const cancelHandler = () => {
     onCancelClicked(false);
-    console.log("cancelHandler");
   };
 
-  //useEffect for keyboard event
+  //For keyboard events
   useEffect(() => {
-    document.addEventListener("keydown", (e: KeyboardEvent) => {
+    const handleKeyboardEvent = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
         onCancelClicked(false);
-        console.log("ESCHandler");
       }
-    });
+    };
+    document.addEventListener("keydown", handleKeyboardEvent);
+    return () => {
+      document.removeEventListener("keydown", handleKeyboardEvent);
+    };
   }, [onCancelClicked]);
 
   return (

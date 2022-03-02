@@ -1,6 +1,6 @@
 import { Component } from "react";
 import styles from "./DateContainer.module.css";
-import moment from "moment"; // moment library for date container
+import moment from "moment"; // moment library
 
 class DateContainer extends Component {
   date = moment().format("D");

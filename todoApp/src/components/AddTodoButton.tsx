@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
 import AddTodoForm from "./AddTodoForm";
-import styles from "./Button.module.css";
+import styles from "./AddTodoButton.module.css";
 
 interface ButtonInterface {
   onButtonClicked: () => void;
@@ -12,22 +12,21 @@ const Button = ({ onButtonClicked }: ButtonInterface) => {
   const buttonHandler = () => {
     setClicked((prevState) => !prevState);
   };
-  const cancelHandler = (state: boolean) => {
+  const cancelHandler = useCallback((state: boolean) => {
     setClicked(state);
-  };
+  }, []);
   const submitHandler = () => {
     onButtonClicked();
   };
 
   return (
     <>
-      {clicked && (
+      {clicked ? (
         <AddTodoForm
           onCancelClicked={cancelHandler}
           onSubmitClicked={submitHandler}
         />
-      )}
-      {!clicked && (
+      ) : (
         <button onClick={buttonHandler} className={styles.button}>
           +
         </button>
