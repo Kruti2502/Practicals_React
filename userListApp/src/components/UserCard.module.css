@@ -1,0 +1,81 @@
+.flex_container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.card_container {
+  justify-content: center;
+  gap: 3px;
+  flex-direction: column;
+  background-color: white;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 5px 16px;
+  padding: 30px;
+  border-radius: 20px;
+}
+.profile_img {
+  width: 120px;
+  border-radius: 100px;
+  margin-bottom: 15px;
+}
+.username_container {
+  gap: 10px;
+}
+.name {
+  font-weight: 600;
+}
+.icon {
+  color: green;
+}
+.email {
+  font-size: 15px;
+  color: grey;
+}
+.plan {
+  font-weight: 600;
+  margin-top: 2.5px;
+}
+.button {
+  background-color: #f09f2b;
+  color: white;
+  font-weight: 500;
+  border-radius: 5px;
+  padding: 8px 40px;
+  border: none;
+  margin-top: 7px;
+}
+.plan_uses {
+  margin-top: 20px;
+  width: 100%;
+  text-align: left;
+  font-size: 15px;
+  font-weight: 600;
+}
+.progress_bar {
+  height: 5px;
+  width: 100%;
+  border-radius: 100px;
+  background-color: #fde6c0;
+  margin-bottom: 20px;
+}
+.progress {
+  width: 60%;
+  height: 5px;
+  border-radius: 100px;
+  background-color: #f09f2b;
+}
+.clicks_container {
+  gap: 20px;
+}
+.clicks {
+  font-size: 20px;
+  font-weight: 600;
+}
+.clicks_reviewed {
+  font-size: 13px;
+}
+.hr {
+  width: 1px;
+  height: 30px;
+  background-color: grey;
+}
