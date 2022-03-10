@@ -1,0 +1,52 @@
+.flex_container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.users_container {
+  gap: 40px;
+  margin: 0px 0px 0px 30px;
+  cursor: pointer;
+}
+.profile {
+  gap: 10px;
+}
+.profile_img {
+  border-radius: 100px;
+  width: 40px;
+}
+.users_info {
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 0px;
+  width: 200px;
+  font-size: 14px;
+}
+.name {
+  font-weight: 600;
+}
+.active {
+  color: rgb(0, 126, 0);
+  font-weight: 500;
+  width: 88px;
+  padding-left: 10px;
+}
+.owner {
+  font-weight: 400;
+  width: 95px;
+  padding-left: 8px;
+}
+.icon {
+  font-size: 22px;
+  color: rgb(148, 148, 148);
+}
+.dropdown {
+  padding: 2px 7px 2px 5px;
+  cursor: pointer;
+  border: none;
+  background-color: white;
+  color: rgb(73, 73, 73);
+}
+.dropdown:focus {
+  outline: none;
+}

@@ -1,0 +1,15 @@
+.flex_container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 40px;
+  margin: 30px 0px 10px -290px;
+  font-weight: 600;
+  width: 640px;
+}
+.name {
+  width: 257px;
+}
+.status {
+  width: 88px;
+}
