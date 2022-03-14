@@ -1,0 +1,30 @@
+.container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  list-style-type: none;
+  gap: 20px;
+  color: rgb(73, 73, 73);
+}
+.pages {
+  font-size: 17px;
+  padding: 4px 10px 2px;
+}
+.active_page {
+  background-color: #f09f2b;
+  color: white !important;
+  padding: 4px 10px 2px;
+}
+.link {
+  text-decoration: none;
+  font-size: 17px;
+  color: rgb(73, 73, 73);
+}
+.link:hover {
+  color: rgb(0, 0, 0);
+}
+.disable,
+.disable:hover {
+  color: rgb(184, 184, 184);
+  cursor: default;
+}

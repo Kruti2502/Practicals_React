@@ -1,26 +1,28 @@
 import React from "react";
 import styles from "./DisplayUserList.module.css";
 import { RiLock2Line, RiDeleteBin6Line } from "react-icons/ri";
-import { UserListInterface } from "../App";
+import { FetchUserDataInterface } from "../redux/ActionTypes";
 
 interface UserPropInterface {
   id: number;
-  image: string;
-  name: string;
+  avatar: string;
+  first_name: string;
+  last_name: string;
   email: string;
-  onMouseEnter: (arg: UserListInterface) => void;
+  onMouseEnter: (arg: FetchUserDataInterface) => void;
   onMouseExit: () => void;
 }
 
 const DisplayUserList = ({
   id,
-  image,
-  name,
+  avatar,
+  first_name,
+  last_name,
   email,
   onMouseEnter,
   onMouseExit,
 }: UserPropInterface) => {
-  const mouseEnterHandler = (userDetail: UserListInterface) => {
+  const mouseEnterHandler = (userDetail: FetchUserDataInterface) => {
     onMouseEnter(userDetail);
   };
   const mouseExitHandler = () => {
@@ -31,13 +33,17 @@ const DisplayUserList = ({
     <>
       <div
         className={`${styles.flex_container} ${styles.users_container}`}
-        onMouseEnter={() => mouseEnterHandler({ id, name, email, image })}
+        onMouseEnter={() =>
+          mouseEnterHandler({ id, avatar, first_name, last_name, email })
+        }
         onMouseLeave={mouseExitHandler}
       >
         <div className={`${styles.flex_container} ${styles.profile}`}>
-          <img src={image} alt="profile-pic" className={styles.profile_img} />
+          <img src={avatar} alt="profile-pic" className={styles.profile_img} />
           <div className={`${styles.flex_container} ${styles.users_info}`}>
-            <div className={styles.name}>{name}</div>
+            <div className={styles.name}>
+              {first_name} {last_name}
+            </div>
             <div>{email}</div>
           </div>
         </div>
