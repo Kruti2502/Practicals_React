@@ -1,3 +1,15 @@
+.loading {
+  font-size: 30px;
+  width: 100%;
+  text-align: center;
+  margin-top: 50vh;
+}
+.error {
+  color: red;
+  font-size: 20px;
+  text-align: center;
+  margin-top: 50vh;
+}
 .flex_container {
   display: flex;
   justify-content: flex-start;
@@ -5,11 +17,20 @@
   flex-direction: column;
 }
 .container {
+  align-items: flex-start;
+  gap: 50px;
+}
+.container_profile {
+  margin: 50px 10px 30px 100px;
   flex-direction: row;
   gap: 100px;
-  margin: 15px 0px 30px 30px;
-  width: 1024px;
 }
-.users_container {
+.container_users_list {
   gap: 20px;
+}
+.container_user {
+  gap: 30px;
+}
+.pagination {
+  margin-left: 550px;
 }
